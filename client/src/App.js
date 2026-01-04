@@ -8,7 +8,7 @@ function App() {
 
   // 1. Fetch existing posts from the backend
   const fetchPosts = () => {
-    axios.get('http://localhost:5000/api/posts')
+    axios.get('/api/posts')
       .then(res => setPosts(res.data))
       .catch(err => console.log("Fetch error:", err));
   };
@@ -20,7 +20,7 @@ function App() {
   // 2. Function to send a new post to the database
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:5000/api/posts', { title, content })
+    axios.post('/api/posts', { title, content })
       .then(() => {
         setTitle('');   // Clear input fields
         setContent('');
